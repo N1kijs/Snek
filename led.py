@@ -1,7 +1,7 @@
 import RPi.GPIO as GPIO
 import time
 GPIO.setmode(GPIO.BCM)
-GPIO.setwarnings(false)
+GPIO.setwarnings(False)
 
 button = 4
 
@@ -13,4 +13,3 @@ while True:
     else:
         print ("LOW")
     time.sleep(0.5)
-    
