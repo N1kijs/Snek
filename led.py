@@ -1,21 +1,16 @@
 import RPi.GPIO as GPIO
 import time
 GPIO.setmode(GPIO.BCM)
-GPIO.setwarnings(False)
-GPIO.setup(18,GPIO.OUT)
+GPIO.setwarnings(false)
 
-counter = 0
-try:
-    while counter < 30:
-        print ("Led on")
-        GPIO.output(18,GPIO.HIGH)
-        time.sleep(1)
-        print ("Led off")
-        GPIO.output(18,GPIO.LOW)
-        time.sleep(1)
-        print ("kkas jauns")
-        counter = counter + 1
-except KeyboardInterrupt :
-    print ("\n"), counter
-finally:
-    GPIO.cleanup()
+button = 4
+
+GPIO.setup(button, GPIO.IN, GPIO.PUD_UP)
+while True:
+    button_state = GPIO.input(button)
+    if button_state == GPIO.HIGH:
+        print ("HIGH")
+    else:
+        print ("LOW")
+    time.sleep(0.5)
+    
