@@ -29,12 +29,15 @@ try:
         if button_state1 == GPIO.LOW:
             GPIO.output(4,GPIO.HIGH)
             print(data.timestamp)
+            time.sleep(1)
         if button_state2 == GPIO.LOW:
             GPIO.output(17,GPIO.HIGH)
             print(data.pressure)
+            time.sleep(1)
         if button_state3 == GPIO.LOW:
             GPIO.output(27,GPIO.HIGH)
             print(data.temperature)
+            time.sleep(1)
         else:
             GPIO.output(4,GPIO.LOW)
             GPIO.output(17,GPIO.LOW)
