@@ -16,10 +16,7 @@ GPIO.setup(24, GPIO.IN, GPIO.PUD_UP)
 port = 1
 address = 0x76
 bus = smbus2.SMBus(port)
-
 claibration_params = bme280.load_calibration_params(bus, address)
-
-
 
 try:
     while True:
